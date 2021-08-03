@@ -86,7 +86,7 @@
                                 <h4>New York</h4>
                                 <h4>Fri 27 Nov 2016</h4>
                                 <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button>Buy Tickets</button>
+                                <button class="js-buy-tickets">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place place-2">
@@ -95,7 +95,7 @@
                                 <h4>Paris</h4>
                                 <h4>Sat 28 Nov 2016</h4>
                                 <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button>Buy Tickets</button>
+                                <button class="js-buy-tickets">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place place-3">
@@ -104,7 +104,7 @@
                                 <h4>San Francisco</h4>
                                 <h4>Sun 29 Nov 2016</h4>
                                 <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button>Buy Tickets</button>
+                                <button class="js-buy-tickets">Buy Tickets</button>
                             </div>
                         </div>
                     </div>
@@ -158,6 +158,60 @@
             </div>
         </div>
 
+        <div class="model js-model">
+            <div class="model-container">
+                <div class="model-close js-model-close">
+                    <i class="ti-close"></i>
+                </div>
+                <header class="model-header">
+                    <i class="ti-bag" style="margin-right: 15px;"></i> Tickets
+                </header>
+
+                <div class="model-body">
+                    <label for="" class="model-label">
+                        <i class="ti-shopping-cart"></i>
+                        Tickets, $15 per person
+                    </label>
+                    <input type="text" class="model-input" placeholder="How many?">
+                    
+                    <label for="" class="model-label">
+                        <i class="ti-user"></i>
+                        Send To
+                    </label>
+                    <input type="text" class="model-input" placeholder="Enter email">
+
+                    <button id="buy-tickets">
+                        PAY <i class="ti-check"></i>
+                    </button>
+                </div>
+
+                <div class="model-footer">
+                    <p class="model-help">
+                        Need <a href="">help?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        const buyBtns= document.querySelectorAll('.js-buy-tickets')
+        const model = document.querySelector('.js-model')
+        const modelClose=document.querySelector('.js-model-close')
+        // Thêm class có tên là open vào thẻ div có class là model
+        function showBuyTickets(){
+            model.classList.add("open")
+        }
+
+        // Xoá class có tên là open vào thẻ div có class là model
+        function closeTickets(){
+            model.classList.remove('open')
+        }
+
+        for(const buyBtn of buyBtns){
+            buyBtn.addEventListener('click',showBuyTickets)
+        }
+        modelClose.addEventListener('click',closeTickets)
+        model.addEventListener('click',closeTickets)
+    </script>
 </body>
 </html>

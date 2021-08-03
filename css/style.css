@@ -146,6 +146,7 @@ html{
     padding: 32px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .about .about-member img{
@@ -287,14 +288,14 @@ html{
 }
 
 
-input{
+.contact .contact-info input{
     height: 40px;
     padding: 8px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
 }
 
-input[type="email"]{
+.contact .contact-info input[type="email"]{
     width: 100%;
 }
 
@@ -306,7 +307,7 @@ input[type="email"]{
     float: right;
 }
 
-button:hover{
+.contact .contact-info button:hover{
     background-color: #ccc;
     cursor: pointer;
 }
@@ -332,4 +333,104 @@ button:hover{
 .footer i{
     opacity: 0.6;
     font-size: 20px;
+}
+
+.model.open {
+    display: flex;
+}
+
+.model{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.model .model-container{
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    background-color: #fff;
+    position: relative;
+    animation: modelFaceIn ease 0.6s;
+}
+
+.model .model-header {
+    background-color: #009688;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 128px;
+    color: #fff;
+    font-size: 30px;
+}
+
+.model .model-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 20px;
+}
+
+.model .model-close:hover{
+    background-color: #ccc;
+    color: #333;
+    cursor: pointer;
+}
+
+.model-body {
+    padding: 16px;
+}
+
+.model-label {
+    display: block;
+    color: #000;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.model-input {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+
+#buy-tickets {
+    width: 100%;
+    background-color: #009688;
+    padding: 16px;
+    margin: 16px 0;
+    color: #fff;
+    font-size: 15px;
+    border: 0;
+}
+
+#buy-tickets:hover{
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.model-footer {
+    padding: 0 16px;
+    text-align: right;
+}
+
+@keyframes modelFaceIn {
+    from{
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
